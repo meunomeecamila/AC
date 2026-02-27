@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="1.0">
+  <main name="main"/>
+
+  <circuit name="main">
+
+    <!-- Entrada de 8 bits -->
+    <comp name="Pin" loc="100 200">
+      <a name="width" val="8"/>
+      <a name="label" val="Entrada"/>
+    </comp>
+
+    <!-- Splitter para extrair o LSB -->
+    <comp name="Splitter" loc="220 200">
+      <a name="incoming" val="8"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+      <a name="bit8" val="1"/>
+    </comp>
+
+    <!-- LED ÍMPAR -->
+    <comp name="Led" loc="350 180">
+      <a name="label" val="Impar"/>
+    </comp>
+
+    <!-- NOT para gerar Par -->
+    <comp name="NOT" loc="300 230"/>
+
+    <!-- LED PAR -->
+    <comp name="Led" loc="350 230">
+      <a name="label" val="Par"/>
+    </comp>
+
+    <!-- Fiação -->
+    <wire from="140 200" to="200 200"/>
+    <wire from="240 220" to="350 180"/>
+    <wire from="240 220" to="300 230"/>
+    <wire from="320 230" to="350 230"/>
+
+  </circuit>
+</project>
